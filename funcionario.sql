@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS FUNCIONARIO;
+CREATE TABLE FUNCIONARIO(
+    cpf CHAR(11),
+    nome VARCHAR(255),
+    vaga integer,
+    PRIMARY KEY(cpf)
+);
