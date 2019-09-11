@@ -1,0 +1,18 @@
+CREATE TABLE TRABALHA_EM(
+    cpf CHAR(11),
+    id_depto INT,
+    endereco VARCHAR(255),
+    DESDE DATE,
+    FOREIGN KEY (cpf)REFERENCES FUNCIONARIOS(cpf),
+    FOREIGN KEY (id_depto)REFERENCES DEPTO(id),
+    FOREIGN KEY (endereco)REFERENCES LOCALIDADES(endereco),
+    PRIMARY KEY(cpf,id_depto,endereco)
+);
+
+CREATE TABLE REPORTA_A(
+    cpf_supervisor CHAR(11),
+    cpf_subordinado CHAR(11),
+    PRIMARY KEY(cpf_supervisor,cpf_subordinado),
+    FOREIGN KEY(cpf_supervisor)REFERENCES FUNCIONARIOS(cpf),
+    FOREIGN KEY(cpf_subordinado)REFERENCES FUNCIONARIOS(cpf)
+);
