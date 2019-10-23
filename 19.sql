@@ -14,10 +14,22 @@
 -- SELECT DISTINCT A.nivel FROM ALUNO A,MATRICULADO M ,CURSO C WHERE A.nroAlun=M.nroAlun AND C.nome=M.nomeCurso AND C.sala='20 AVW';
  
 -- Liste o nome do alunos e o nome da formação cuja formação contenha a string 'cie'
+-- SELECT A.nomeAlun ,A.formacao FROM ALUNO A WHERE A.formacao LIKE ('%cie%');
  
 -- Conte o número de alunos.
+-- SELECT COUNT(*)FROM ALUNO;
  
 -- Quantas matrículas há no curso com nome 'Database Systems'
+-- SELECT COUNT(*)FROM MATRICULADO M WHERE M.nomeCurso='Database Systems';
+
+-- Selecione o nome de todos os professores dos departamentos 68 e 12.
+-- SELECT P.nomeProf FROM PROFESSOR P WHERE P.idDepto=68 AND P.idDepto=12;
+ 
+-- Selecione o nome dos professores que deram aulas no curso com 'Database Systems' ou são do departamento 68.
+-- SELECT P.nomeProf FROM PROFESSOR P,CURSO C WHERE P.idProf=C.idProf AND C.nome='Database Systems' OR (P.idDepto=68);
+ 
+-- Selecione o número dos alunos com formação 'Computer Science' ou que fizeram o curso de 'Database Systems'.
+-- SELECT COUNT(*) FROM ALUNO A WHERE A.formacao='Computer Science' OR (A.formacao='Database Systems');
  
 DROP TABLE IF EXISTS MATRICULADO;
 DROP TABLE IF EXISTS ALUNO;
